@@ -297,6 +297,12 @@ ndc://g/user-profile/{d}""")
 					print(f"Info requested by {data.message.author.nickname}")
 				except Exception as e:
 					print(e)
+			if x.lower()=="-fuckperry" and c==[]:
+				try:
+					subclient.send_message(chatId=data.message.chatId,message=f"""Вы выебали Пери!Умничьки,а теперь в шахту🌞""")
+					print(f"Info requested by {data.message.author.nickname}")
+				except Exception as e:
+					print(e)
 			if x.lower()=="-mansturbate" and c==[]:
 				try:
 					subclient.send_message(chatId=data.message.chatId,message=f"""[i]Мансутрует <${data.message.author.nickname}$>\n[i]Ну давай...Сенпай!""")
