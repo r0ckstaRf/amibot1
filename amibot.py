@@ -207,6 +207,16 @@ ndc://g/user-profile/{d}""")
 						subclient.send_message(chatId=data.message.chatId,message="Inviteall заблокирована")
 					except:
 						pass
+			if x.lower() == "-prank" and c == []:
+				try:
+					subclient.delete_message(messageId=data.message.messageId, chatId=data.message.chatId, asStaff=True,
+											 reason="clear")
+					subclient.send_message(chatId=data.message.chatId,
+										   message=f"Ты был обманут {data.message.author.nickname}",
+										   messageType=107)
+					print("deleted a message")
+				except Exception as e:
+					print(e)
 			if x.lower()=="-start" and c==[]:
 				if x.lower() not in l:
 					try:
@@ -224,16 +234,17 @@ ndc://g/user-profile/{d}""")
 						subclient.send_message(chatId=data.message.chatId,message=f"Start команда заблокирована <${data.message.author.nickname}$> !!",mentionUserIds=[data.message.author.userId])
 					except:
 						pass
+			if x.lower() == "-help" and c == []:
 				try:
 					subclient.send_message(chatId=data.message.chatId,message="""[cb]Комманды:-
 
 -info                 
 -join {chatlink}      -global {ссылка на участника}
--pm             -prank
+-pm               -prank
 -start               -vc
 -heicmd           -inviteall
 -lock                -clear
--alock,-rlock (admin cmds)""")
+-alock,-rlock (только пери и моречка)""")
 					print(f"Info requested by {data.message.author.nickname}")
 				except Exception as e:
 					print(e)
@@ -268,9 +279,27 @@ ndc://g/user-profile/{d}""")
 					print(f"Info requested by {data.message.author.nickname}")
 				except Exception as e:
 					print(e)
+			if x.lower()=="-fuckmori" and c==[]:
+				try:
+					subclient.send_message(chatId=data.message.chatId,message="""[i]Поздравляю вы оттарабанили Моречку""")
+					print(f"Info requested by {data.message.author.nickname}")
+				except Exception as e:
+					print(e)
+			if x.lower()=="-fart" and c==[]:
+				try:
+					subclient.send_message(chatId=data.message.chatId,message="""[i]Пук пук я обосрался""")
+					print(f"Info requested by {data.message.author.nickname}")
+				except Exception as e:
+					print(e)
 			if x.lower()=="-twerk" and c==[]:
 				try:
-					subclient.send_message(chatId=data.message.chatId,message="""[i]моя попка болит прямо сейчас, может позже ..""")
+					subclient.send_message(chatId=data.message.chatId,message=f"""[i]Тверкает для <${data.message.author.nickname}$>..""")
+					print(f"Info requested by {data.message.author.nickname}")
+				except Exception as e:
+					print(e)
+			if x.lower()=="-mansturbate" and c==[]:
+				try:
+					subclient.send_message(chatId=data.message.chatId,message=f"""[i]Мансутрует <${data.message.author.nickname}$>\n[i]Ну давай...Сенпай!""")
 					print(f"Info requested by {data.message.author.nickname}")
 				except Exception as e:
 					print(e)
@@ -283,7 +312,9 @@ ndc://g/user-profile/{d}""")
 -cheerme
 -hugme
 -joke
--fart""")
+-fart
+-fuckmori
+-mansturbate""")
 					print(f"Info requested by {data.message.author.nickname}")
 				except Exception as e:
 					print(e)
