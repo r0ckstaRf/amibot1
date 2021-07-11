@@ -50,7 +50,7 @@ def on_antispam(data):
     if user_id != client.userId:
         if ANTI_SPAM.get(user_id) is None:
             ANTI_SPAM[user_id] = int(time.time())
-        elif int(time.time()) - ANTI_SPAM[user_id] <= 0.5:
+        elif int(time.time()) - ANTI_SPAM[user_id] <= 1.0:
             if WARNS.count(user_id) >= 4:
                 sub_client.kick(userId=user_id, chatId=data.message.chatId, allowRejoin=False)
                 print(f"{user_id} удален из чата за спам")
@@ -95,7 +95,7 @@ def on_avatar_start_chat_start(data):
 	if data.comId==cidy:
 		if subclient.get_chat_thread(data.message.chatId).title!=None:
 			try:
-				subclient.send_message(chatId=data.message.chatId,message=f"Ghost message by <${data.message.author.nickname}$>",mentionUserIds=[data.message.author.userId])
+				subclient.send_message(chatId=data.message.chatId,message=f"Страшно вкусно и он абасрался <${data.message.author.nickname}$>",mentionUserIds=[data.message.author.userId])
 				subclient.kick(userId=data.message.author.userId,chatId=data.message.chatId,allowRejoin=True)
 				print(f"Someone spamed gc")
 			except Exception as e:
@@ -252,7 +252,7 @@ ndc://g/user-profile/{d}""")
 											 reason="clear")
 					subclient.send_message(chatId=data.message.chatId,
 										   message=f"Ты был обманут {data.message.author.nickname}",
-										   messageType=107)
+										   messageType=109)
 					print("deleted a message")
 				except Exception as e:
 					print(e)
